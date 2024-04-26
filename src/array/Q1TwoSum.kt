@@ -15,7 +15,7 @@ package array
  */
 fun twoSum(nums: IntArray, target: Int): IntArray {
     // First create a HashMap
-    var map = HashMap<Int, Int>()
+    val map = HashMap<Int, Int>()
     // Iterate through the array
     nums.forEachIndexed { index, value ->
         // Check the diff here
