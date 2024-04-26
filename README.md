@@ -9,16 +9,90 @@ The Blind 75 LeetCode Questions list is an invaluable resource for anyone prepar
 ## Blind 75 Questions and Solutions
 
 ### Array
-1. [Two Sum](https://leetcode.com/problems/two-sum/description/)
-2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
-3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
-4. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/description/)
-5. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
-6. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/description/)
-7. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
-8. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
-9. [3 Sum](https://leetcode.com/problems/3sum/description/)
-10. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/)
+1. [Two Sum](https://leetcode.com/problems/two-sum/description/)  
+
+   Given an array of integer nums and an integer target, return indices of the two numbers such that they add up to the target.
+   You may assume that each input would have exactly one solution, and you may not use the same element twice.
+   You can return the answer in any order.  
+   Example:-  
+   Input: nums = [ 2, 7, 11, 15 ], target = 9  
+   Output: [ 0, 1 ]  
+   Explanation: Because nums[ 0 ] + nums[ 1 ] == 9, we return [ 0, 1 ].  
+
+   #### Solution 1:- Brute Force  
+   Here we have an array, nums = [ 1, 8, 2, 15, 5 ], target = 13      
+   Step 1 -> 13 - 1 = 12, check 12 exists or not in nums -> In this case not exits    
+   Step 2 -> 13 - 8 = 5, check 5 exists or not in numbs -> In this case exits.  
+   Step 3 -> Return [1, 4]
+   Time complexity is O(n2)  
+
+   #### Solution 2:-
+   Here we have an array, nums = [1, 8, 2, 15, 5], target = 13
+   Step 1 -> Sort the array, nums = [1, 2, 5, 8, 15]
+   Step 2 -> 13 - 1 = 12 -> Do binary search on nums -> Check 12 exit or not
+   Step 3 -> 13 - 8 = 5 -> Do binary search on nums -> Check 5 exit or not -> Exiting
+   Step 4 -> Return [1, 4]
+   Time Complexity in 0(nLogn) because logn for sorting
+
+   #### Solution 3:-
+   Here we have an array, nums = [1, 8, 2, 15, 5], target = 13  
+   Step 1 -> Create a hashMap to store value and index  
+   | Key      | Value |
+   |----------|----------|
+
+   Step 2:- 13 - 1 = 12 -> Check 12, exists or not in this hashMap -> Not exits
+   Store the value and index in hashMap  
+   | Key      | Value    |  
+   |----------|----------|
+   |    1     |     0    |
+   
+   Step 3:- 13 - 8 = 5 -> Check 5, exists or not in this hasMap -> Not exists
+   Store the value and index in hashMap  
+   | Key      | Value    |  
+   |----------|----------|
+   |    1     |     0    |
+   |    8     |     1    |
+   
+   Step 4: 13 - 2 = Check 11, exists or not in this hasMap -> Not exists
+   Store the value and index in hashMap  
+   | Key      | Value    |  
+   |----------|----------|
+   |    1     |     0    |
+   |    8     |     1    |
+   |    2     |     2    |
+
+   Step 5: 13 - 15 = Check -2, exists or not in this hasMap -> Not exists
+   Store the value and index in hashMap
+   | Key      | Value    |  
+   |----------|----------|
+   |    1     |     0    |
+   |    8     |     1    |
+   |    2     |     2    |
+   |    15     |     3    |
+
+   Step 6: 13 - 5 = Check 8, exists or not in this hasMap -> exists
+   | Key      | Value    |  
+   |----------|----------|
+   |    1     |     0    |
+   |    8     |     1    |
+   |    2     |     2    |
+   |    15     |     3    |
+
+   Return the index of 8 that is 1, and return the index of 5 that is 4  
+   Return [1, 4]  
+   Time Complexity O(n)  
+   Space Complexity O(n)  
+   Solution:- [TwoSum](https://github.com/shyakdas/Blind75-Kotlin/blob/main/src/array/Q1TwoSum.kt)
+ 
+3. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+4. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
+5. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/description/)
+6. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
+7. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/description/)
+8. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+9. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+10. [3 Sum](https://leetcode.com/problems/3sum/description/)
+11. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/)
 
 ### Binary
 1. [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/description/)
